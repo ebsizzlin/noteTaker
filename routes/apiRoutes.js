@@ -1,9 +1,17 @@
 //require
 const fs = require('fs');
 const path = require('path');
+const data = require('../db/db.json', 'utf8'); //call json
 
-//requiring the json -- for loop too confusing
-const notes = JSON.parce(fs.readFileSync('./db/db.json', 'utf8'));
+//write function for json to callback (attempt)
+function write(notes)   {
+    notes = JSON.stringify(notes);
+    fs.writeFileSync("./db/db.json", notes, function(err)   {
+        if(err) {
+            return console.log(err);
+        };
+    });
+};
 
 //module -- make this short and sweet
 module.exports = function(app)  {
@@ -14,7 +22,8 @@ module.exports = function(app)  {
 
     //post
     app.post('/api/notes', function(req, res)   {
-        notes.push(req.body);
+        data.push(req.body);
+        write(notes)
         res.json(notes);
     })
 
