@@ -1,9 +1,10 @@
 //require
-const express = require("express");
+const express = require('express');
+const path = require('path');
 
 //express
-const PORT = process.env.PORT || 3000;
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 //read
 app.use(express.urlencoded({ extended: true }));
@@ -11,8 +12,8 @@ app.use(express.json());
 app.use(express.static('public'));
 
 //js require
-const apiRoutes = require('routes/apiRoutes');
-const htmlRoutes = require('routes/htmlRoutes');
+require('./routes/apiRoutes');
+require('./routes/htmlRoutes');
 
 //listener
 app.listen(PORT, function() {
