@@ -6,7 +6,7 @@ A simple note taking application using Express where the user can write, save, a
 
 ## Tech Used
 
-HTML, CSS, Bootstrap, JavaScript, JQuery, JSON, Node.js, Express, Heroku
+HTML, CSS, Bootstrap, JavaScript, JQuery (kind of), JSON, Node.js, Express, Heroku
 
 ## Instructions
 

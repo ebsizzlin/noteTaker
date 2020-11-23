@@ -31,6 +31,7 @@ module.exports = (app) => {
     //delete -- all help from tutor, review 11/21 class & async
     app.delete('/api/notes/:id', function(req, res) {
         var deleteNotes = req.params.id;
+        //.params is a shortcut to use when calling a method, dont have to create an array
         var noteNum = 0;
 
         notes = notes.filter(thisNote => {
@@ -48,5 +49,5 @@ module.exports = (app) => {
 
         //res the notes
         res.json(notes);
-    })
-}
+    });
+};
