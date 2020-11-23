@@ -15,15 +15,13 @@ module.exports = function(app)  {
     //post
     app.post('/api/notes', function(req, res)   {
         notes.push(req.body);
-        fs.writeFile('db/db.json', JSON.stringify(notes), (err) => {
-            if (err) throw err;
-            console.log('Saved: ', notes);
-        });
         res.json(notes);
     })
 
     //delete
     app.delete('api/notes/:id', function(req, res)  {
-
-    })
-}
+        notes.length = 0;
+        waitListData.length = 0;
+        res.json({ ok: true });
+    });
+};
