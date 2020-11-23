@@ -1,6 +1,8 @@
 //require
 const express = require('express');
 const path = require('path');
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes')
 
 //express
 const app = express();
@@ -11,9 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-//js require
-require('./routes/apiRoutes');
-require('./routes/htmlRoutes');
+//js activation
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 //listener
 app.listen(PORT, function() {
