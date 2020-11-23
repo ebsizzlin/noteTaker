@@ -8,7 +8,8 @@ module.exports = function(app)  {
         writeNotes
             .newNotes()
             .then(notes => res.json(notes))
-            .catch(err => res.status(500).json(err)); //status(500) is the error response, the "catch" is like notify of error
+            .catch(err => res.status(500).json(err));
+            //status(500) is the error response, the "catch" is like notify of error
     });
 
     //post
@@ -30,7 +31,7 @@ module.exports = function(app)  {
 
 // //module
 // module.exports = function(app)  {
-//     //get
+//     //get - complete
 //     app.get('/api/notes', function(req, res)    {
 //         const writeNotes = newNotes('./db/db.json', 'utf8', (err, data) =>   {
 //             if (err) throw err;
@@ -42,6 +43,7 @@ module.exports = function(app)  {
 //     //post
 //     app.post('/api/notes', function(req, res)   {
 //         writeNotes.push(req.body);
+            //a lot missing here
 //         res.json(true);
 //     })
 
@@ -49,6 +51,7 @@ module.exports = function(app)  {
 //     app.delete('api/notes/:id', function(req, res)  {
 //         writeNotes.length = 0;
 //         res.json({ ok: true });
+            //feels incomplete
 //     });
 // };
 
