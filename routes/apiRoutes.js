@@ -2,10 +2,10 @@
 const fs = require('fs');
 const path = require("path");
 
-//tutor help
+//requiring the json -- for loop too confusing
 const notes = JSON.parce(fs.readFileSync('db/db.json', 'utf8'));
 
-//module
+//module -- make this short and sweet
 module.exports = function(app)  {
     //get
     app.get('/api/notes', function(req, res)    {
@@ -15,7 +15,11 @@ module.exports = function(app)  {
     //post
     app.post('/api/notes', function(req, res)   {
         notes.push(req.body);
-        res.json('saved');
+        fs.writeFile('db/db.json', JSON.stringify(notes), (err) => {
+            if (err) throw err;
+            console.log('Saved: ', notes);
+        });
+        res.json(notes);
     })
 
     //delete
