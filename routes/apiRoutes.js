@@ -1,17 +1,6 @@
 //require
 const fs = require('fs');
 const path = require('path');
-// const data = require('../db/db.json', 'utf8'); //call json
-
-//write function for json to callback (attempt)
-// function write(notes)   {
-//     notes = JSON.stringify(notes);
-//     fs.writeFileSync("./db/db.json", notes, function(err)   {
-//         if(err) {
-//             return console.log(err);
-//         };
-//     });
-// };
 
 //module -- make this short and sweet
 module.exports = function(app)  {
