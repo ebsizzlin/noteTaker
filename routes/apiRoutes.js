@@ -1,17 +1,22 @@
 //require
 const fs = require('fs');
+//tutor help
+const notes = JSON.parce(fs.readFileSync('db/db.json', 'utf8'));
 
 //module
 module.exports = function(app)  {
-    //tutor help
-    var notes = JSON.parce(fs.readFileSync('db/db.json', 'utf8'));
-
     //get
-    app.get()
+    app.get('/api/notes', function(req, res)    {
+        res.json(notes);
+    });
 
     //post
-    app.post
+    app.post('/api/notes', function(req, res)   {
+
+    })
 
     //delete
-    app.delete
+    app.delete('api/notes/:id', function(req, res)  {
+        
+    })
 }
