@@ -1,9 +1,17 @@
 //require
+const fs = require('fs');
 
 //module
+module.exports = function(app)  {
+    //tutor help
+    var notes = JSON.parce(fs.readFileSync('db/db.json', 'utf8'));
 
-//get
+    //get
+    app.get()
 
-//post
+    //post
+    app.post
 
-//delete
+    //delete
+    app.delete
+}
