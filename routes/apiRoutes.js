@@ -1,6 +1,6 @@
 //require
 const fs = require('fs');
-
+const path = require("path");
 
 //tutor help
 const notes = JSON.parce(fs.readFileSync('db/db.json', 'utf8'));
