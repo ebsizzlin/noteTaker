@@ -28,3 +28,5 @@ https://mighty-sea-08531.herokuapp.com/
 <img width="1919" alt="Screen Shot 2020-11-23 at 12 42 41 AM" src="https://user-images.githubusercontent.com/70185995/99932055-d1640e00-2d24-11eb-9aaa-a0225d176d68.png">
 
 ## Walkthrough
+
+currently getting three errors preventing notes page from opening on heroku, troubleshooting right now

@@ -28,7 +28,7 @@ module.exports = (app) => {
         res.json(notes);
     });
 
-    //delete
+    //delete -- all help from tutor, review 11/21 class & async
     app.delete('/api/notes/:id', function(req, res) {
         var deleteNotes = req.params.id;
         var noteNum = 0;
