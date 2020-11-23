@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 //requiring the json -- for loop too confusing
-const notes = JSON.parce(fs.readFileSync('db/db.json', 'utf8'));
+const notes = JSON.parce(fs.readFileSync('./db/db.json', 'utf8'));
 
 //module -- make this short and sweet
 module.exports = function(app)  {
@@ -21,7 +21,6 @@ module.exports = function(app)  {
     //delete
     app.delete('api/notes/:id', function(req, res)  {
         notes.length = 0;
-        waitListData.length = 0;
         res.json({ ok: true });
     });
 };
