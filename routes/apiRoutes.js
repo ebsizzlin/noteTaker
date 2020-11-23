@@ -15,7 +15,8 @@ module.exports = (app) => {
         var createNotes = req.body;
         var noteData = (notes.length).toString();
 
-        createNotes.id = noteData;; //.id = unique identification
+        createNotes.id = noteData;;
+        //.id = calls on something unique in the app, used to get the specifid id -- here, it's creating a new note with the specific info the user has entered
         notes.push(createNotes);
 
         //writeFile, stringify, throw errors
@@ -32,12 +33,13 @@ module.exports = (app) => {
         var deleteNotes = req.params.id;
         var noteNum = 0;
 
-        notes = notes.filter(current => { //.filter = creates an array
-            return current.id != deleteNotes;
+        notes = notes.filter(thisNote => {
+            //.filter = creates a a new array that contaisn a subset of elements of a previous array -- here, it removes the note the user is deleting from the previous array
+            return thisNote.id !== deleteNotes;
         });
 
-        for (current of notes)  {
-            current.id = noteNum.toString();
+        for (thisNote of notes)  {
+            thisNote.id = noteNum.toString();
             noteNum++;
         };
 
