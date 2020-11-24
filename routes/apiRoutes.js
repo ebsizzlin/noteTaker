@@ -28,7 +28,7 @@ module.exports = (app) => {
         res.json(notes);
     });
 
-    //delete -- all help from tutor, review 11/21 class & async
+    //delete -- all help from BCS, review 11/21 class & async
     app.delete('/api/notes/:id', function(req, res) {
         var deleteNotes = req.params.id;
         //.params is a shortcut to use when calling a method, dont have to create an array
