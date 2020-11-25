@@ -32,20 +32,13 @@ module.exports = (app) => {
 
     //delete -- all help from BCS, review 11/21 class & async
     app.delete('/api/notes/:id', (req, res) => {
-        var notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
         var deleteNotes = req.params.id; //.params is a shortcut to use when calling a method, dont have to create an array
-        var noteNum = 0;
 
         notes = notes.filter(thisNote => {
             //.filter = creates a a new array that contaisn a subset of elements of a previous array -- here, it removes the note the user is deleting from the previous array
             return thisNote.id !== deleteNotes;
             console.log('deleteNotes:', deleteNotes)
         });
-
-        for (thisNote of notes)  {
-            thisNote.id = noteNum.toString();
-            noteNum++;
-        };
 
         //writeFile, stringify, throw errors
         fs.writeFileSync('./db/db.json', JSON.stringify(notes));
