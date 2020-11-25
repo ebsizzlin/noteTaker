@@ -1,6 +1,5 @@
 //require
 const fs = require('fs');
-const util = require('util')
 var uniqid = require('uniqid');
 
 //start module
