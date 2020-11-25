@@ -31,11 +31,10 @@ module.exports = (app) => {
     });
 
     //delete -- all help from BCS, review 11/21 class & async
-    app.delete('/api/notes/:id', function(req, res) {
+    app.delete('/api/notes/:id', (req, res) => {
+        const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
         var deleteNotes = req.params.id;
         //.params is a shortcut to use when calling a method, dont have to create an array
-        const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
-
         var noteNum = 0;
         console.log(notes);
         notes = notes.filter(thisNote => {
