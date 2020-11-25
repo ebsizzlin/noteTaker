@@ -37,7 +37,6 @@ module.exports = (app) => {
         notes = notes.filter(thisNote => {
             //.filter = creates a a new array that contaisn a subset of elements of a previous array -- here, it removes the note the user is deleting from the previous array
             return thisNote.id !== deleteNotes;
-            console.log('deleteNotes:', deleteNotes)
         });
 
         //writeFile, stringify, throw errors
