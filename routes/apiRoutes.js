@@ -1,6 +1,6 @@
 //require
 const fs = require('fs');
-var uniqid = require('uniqid');
+var uniqid = require('uniqid'); //downloaded this specific npm so that each note will have a new id so the delete function wont get confused
 
 //start module
 module.exports = (app) => {
